@@ -1,14 +1,44 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Byte 1 Tutorial</title>
-<!-- Bootstrap core CSS -->
-<link href="../css/bootstrap.min.css" rel="stylesheet">
-<script src="../js/jquery-3.1.1.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>
-</head>
-<body>
-<h1>Data Pipeline Project Byte Example</h1>
-<img src="../images/GDP_heatmap.png" alt="Heatmap of GDP per Capita">
-</body>
+	<head>
+		<title>Byte 1</title>
+		<!-- Bootstrap core CSS -->
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
+		<script src="../js/jquery-3.1.1.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+	</head>
+	<body style="background-color:#F5F3EE;">
+		<div id="heading" style="width: 80%; display:block; margin-left:auto; margin-right: auto">
+			<h2>The Wealth of Nations</h2>
+			<h4>Question: Which countries have the richest people and which have the poorest people?</h4>
+		</div>
+		<br>
+		<div id="data" style="width: 80%; display:block; margin-left:auto; margin-right: auto">
+			<h4>Data</h4>
+			<p>To answer this question, we can refer to economic indicator data from the World Bank. 
+			In particular, we will look at GDP per Capita (since we care about the wealth of individuals, 
+			not of the entire nation). <a href="http://data.worldbank.org/indicator/NY.GDP.PCAP.CD" target="_blank">Here</a>, 
+			the World Bank has provided the GDP per Capita for all countries from 1960 to 2015. 
+			Let's limit our dataset to just the year 2014, the most recent (nearly complete) year available.</p>
+		</div>
+		<br>
+		<div id="heatmap" style="width: 80%; display:block; margin-left:auto; margin-right: auto">
+			<h4>Heatmap</h4>
+			<img src="../images/GDP_heatmap.png" alt="Heatmap of GDP per Capita" style="width:100%;">
+			<p><i>Note: Here, we display an image of a heatmap from Google Fusion Tables, 
+			since Google doesn't allow users to embed actual heatmaps of Geocoded locations.</i></p>
+			<p>The heatmap gives us a good idea about the density of individual wealth in various parts of the world. 
+			We notice that wealth is highly concentrated in Europe, Arab countries, and a part of China. Many countries
+			in Africa and Asia are poorer.</p>
+		</div>
+		<br>
+		<div id="bar-charts" style="width: 80%; display:block; margin-left:auto; margin-right: auto">
+			<h4>Bar Charts</h4>
+			<p>The bar charts below answer our question more specifically, showing the top 10 wealthiest and poorest nations.</p>
+			<iframe width="1000" height="500" scrolling="no" frameborder="no" src="https://fusiontables.google.com/embedviz?containerId=googft-gviz-canvas&amp;q=select+col0%2C+col4+from+1b5UX6_i-6HqfaiQX4zYdy_l6oa_zqU955w3Nefyc+order+by+col4+desc+limit+10&amp;viz=GVIZ&amp;t=COLUMN&amp;uiversion=2&amp;gco_forceIFrame=true&amp;gco_hasLabelsColumn=true&amp;gco_vAxes=%5B%7B%22title%22%3A%22GDP+per+Capita+(US+Dollar)%22%2C+%22minValue%22%3Anull%2C+%22maxValue%22%3Anull%2C+%22useFormatFromData%22%3Atrue%2C+%22viewWindow%22%3A%7B%22max%22%3Anull%2C+%22min%22%3Anull%7D%2C+%22titleTextStyle%22%3A%7B%22color%22%3A%22%23222%22%2C+%22fontSize%22%3A12%2C+%22italic%22%3Afalse%7D%7D%2C%7B%22useFormatFromData%22%3Atrue%2C+%22viewWindow%22%3A%7B%22max%22%3Anull%2C+%22min%22%3Anull%7D%2C+%22minValue%22%3Anull%2C+%22maxValue%22%3Anull%7D%5D&amp;gco_useFirstColumnAsDomain=true&amp;gco_legacyScatterChartLabels=true&amp;gco_isStacked=false&amp;gco_booleanRole=certainty&amp;gco_hAxis=%7B%22useFormatFromData%22%3Atrue%2C+%22minValue%22%3Anull%2C+%22maxValue%22%3Anull%2C+%22viewWindow%22%3Anull%2C+%22viewWindowMode%22%3Anull%2C+%22title%22%3A%22Country%22%2C+%22titleTextStyle%22%3A%7B%22color%22%3A%22%23222%22%2C+%22fontSize%22%3A12%2C+%22italic%22%3Afalse%7D%7D&amp;gco_legend=none&amp;gco_title=World&#39;s+Top+10+Richest+Countries+by+GDP+per+Capita&amp;width=1000&amp;height=500"></iframe>
+			<br><br>
+			<iframe width="1000" height="500" scrolling="no" frameborder="no" src="https://fusiontables.google.com/embedviz?containerId=googft-gviz-canvas&amp;q=select+col0%2C+col4+from+1b5UX6_i-6HqfaiQX4zYdy_l6oa_zqU955w3Nefyc+order+by+col4+asc+limit+10&amp;viz=GVIZ&amp;t=COLUMN&amp;uiversion=2&amp;gco_forceIFrame=true&amp;gco_hasLabelsColumn=true&amp;gco_vAxes=%5B%7B%22title%22%3A%22GDP+per+Capita+(US+Dollar)%22%2C+%22minValue%22%3Anull%2C+%22maxValue%22%3Anull%2C+%22useFormatFromData%22%3Atrue%2C+%22viewWindow%22%3A%7B%22max%22%3Anull%2C+%22min%22%3Anull%7D%2C+%22titleTextStyle%22%3A%7B%22color%22%3A%22%23222%22%2C+%22fontSize%22%3A12%2C+%22italic%22%3Afalse%7D%7D%2C%7B%22useFormatFromData%22%3Atrue%2C+%22viewWindow%22%3A%7B%22max%22%3Anull%2C+%22min%22%3Anull%7D%2C+%22minValue%22%3Anull%2C+%22maxValue%22%3Anull%7D%5D&amp;gco_useFirstColumnAsDomain=true&amp;gco_legacyScatterChartLabels=true&amp;gco_isStacked=false&amp;gco_booleanRole=certainty&amp;gco_hAxis=%7B%22useFormatFromData%22%3Atrue%2C+%22minValue%22%3Anull%2C+%22maxValue%22%3Anull%2C+%22viewWindow%22%3Anull%2C+%22viewWindowMode%22%3Anull%2C+%22title%22%3A%22Country%22%2C+%22titleTextStyle%22%3A%7B%22color%22%3A%22%23222%22%2C+%22fontSize%22%3A12%2C+%22italic%22%3Afalse%7D%7D&amp;gco_legend=none&amp;gco_title=World&#39;s+Top+10+Poorest+Countries+by+GDP+per+Capita&amp;gco_series=%7B%220%22%3A%7B%22color%22%3A%22%23e06666%22%7D%7D&amp;width=1000&amp;height=500"></iframe>
+			<br><br><br>
+		</div>
+	</body>
 </html>

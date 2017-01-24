@@ -1,15 +1,24 @@
 from flask import Flask
+import os
+import jinja2
+import webapp2
+import logging
+
 app = Flask(__name__)
 app.config['DEBUG'] = True
-
+JINJA_ENVIRONMENT = jinja2.Environment(
+    loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
+    extensions=['jinja2.ext.autoescape'],
+    autoescape=True)
+    
 # Note: We don't need to call run() since our application is embedded within
 # the App Engine WSGI application server.
 
 
 @app.route('/')
 def hello():
-    """Return a friendly HTTP greeting."""
-    return 'Hello World!'
+    template = JINJA_ENVIRONMENT.get_template('templates/index.html')
+    return template.render()
 
 
 @app.errorhandler(404)
